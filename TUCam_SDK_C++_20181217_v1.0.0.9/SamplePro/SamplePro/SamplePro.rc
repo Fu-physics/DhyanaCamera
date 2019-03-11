@@ -1,0 +1,603 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\SamplePro.rc2""  // 非 Microsoft Visual C++ 编辑的资源\r\n"
+    "#include ""l.CHS\\afxres.rc""      // 标准组件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\SamplePro.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 170, 62
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 SamplePro"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
+    LTEXT           "SamplePro，1.0 版",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2016",IDC_STATIC,42,26,114,8
+    DEFPUSHBUTTON   "确定",IDOK,113,41,50,14,WS_GROUP
+END
+
+IDD_SAMPLEPRO_DIALOG DIALOGEX 0, 0, 652, 477
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "SamplePro"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+END
+
+IDD_DLG_CTL DIALOGEX 0, 0, 196, 99
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+EXSTYLE WS_EX_PALETTEWINDOW | WS_EX_TRANSPARENT
+FONT 9, "MS Shell Dlg", 400, 0, 0x86
+BEGIN
+    PUSHBUTTON      "Camera Information                                     >>",IDC_BTN_INFO,1,3,190,11,BS_FLAT
+    PUSHBUTTON      "Camera Control                                           >>",IDC_BTN_ControlControl,1,17,190,11,BS_FLAT
+    PUSHBUTTON      "Image Capture                                           >>",IDC_BTN_ImageCapture,1,31,190,11,BS_FLAT
+    PUSHBUTTON      "Trigger                                                      >>",IDC_BTN_Trigger,1,59,190,11,BS_FLAT
+    PUSHBUTTON      "Image Adjustment                                      >>",IDC_BTN_MorePara,1,73,190,11,BS_FLAT
+    PUSHBUTTON      "ROI                                                          >>",IDC_BTN_ROI,1,45,190,11,BS_FLAT
+END
+
+IDD_DLG_PICVIEW DIALOGEX 0, 0, 782, 513
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_BORDER
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_STA_PIC,"Static",SS_GRAYRECT,118,0,527,513
+END
+
+IDD_DLG_ROISET DIALOG  0, 0, 187, 94
+STYLE DS_SETFONT | WS_POPUP
+FONT 9, "Arial"
+BEGIN
+    PUSHBUTTON      "OK",IDC_BTN_OK,137,73,43,14
+    PUSHBUTTON      "Cancel",IDC_BTN_CANCEL,109,73,28,14
+END
+
+IDD_DLG_COMPRESS DIALOGEX 0, 0, 217, 121
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Video Compressor Settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,100,97,50,17
+    PUSHBUTTON      "Cancel",IDCANCEL,151,97,50,17
+    PUSHBUTTON      "Config",IDC_BTN_SETTING,149,46,50,17
+    LTEXT           "Video Compressor",IDC_STATIC,28,10,167,9
+    COMBOBOX        IDC_COMBO_COMPRESS,26,26,173,87,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DLG_CAMCONTROL DIALOGEX 0, 0, 219, 178
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Resolution:",IDC_STATIC,18,15,38,10
+    LTEXT           "Ms",IDC_STA_MS,79,125,12,10
+    LTEXT           "μs",IDC_STA_US,125,125,9,10
+    LTEXT           "Sec",IDC_STA_SEC,31,125,14,10
+    COMBOBOX        IDC_CMB_RES,56,13,76,68,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Live",IDC_BTN_LIVE,16,32,48,18
+    EDITTEXT        IDC_EDT_SEC,20,138,30,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_EDT_MS,66,138,30,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_US,113,138,30,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPN_US,"msctls_updown32",UDS_ARROWKEYS,143,137,9,15
+    CONTROL         "",IDC_SPN_MS,"msctls_updown32",UDS_ARROWKEYS,96,137,10,15
+    CONTROL         "",IDC_SPN_SEC,"msctls_updown32",UDS_ARROWKEYS | WS_DISABLED,50,137,9,15
+    PUSHBUTTON      "OK",IDC_BTN_EXPTM,159,138,31,14
+    LTEXT           "",IDC_STA_FPS,82,37,57,10
+    CONTROL         "Auto Exposure",IDC_CHK_AE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,21,103,61,13
+    CONTROL         "",IDC_SLD_TGR,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | NOT WS_VISIBLE | WS_TABSTOP,96,106,60,12
+    EDITTEXT        IDC_EDT_ATTGR,160,105,30,16,ES_AUTOHSCROLL | ES_READONLY | NOT WS_VISIBLE
+    CONTROL         "16Bit",IDC_CHK_BITOFDEPTH,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,154,13,31,13
+    GROUPBOX        " Exposure Time ",IDC_GRP_EXP,16,87,180,71
+    CONTROL         "HDR",IDC_RADIO_HDR,"Button",BS_AUTORADIOBUTTON | WS_GROUP,25,68,30,10
+    CONTROL         "High Gain",IDC_RADIO_HIGHGAIN,"Button",BS_AUTORADIOBUTTON,63,68,44,10
+    CONTROL         "Low Gain",IDC_RADIO_LOWGAIN,"Button",BS_AUTORADIOBUTTON,115,68,43,10
+    CONTROL         "",IDC_SLD_GAIN,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,38,68,114,13
+    EDITTEXT        IDC_EDT_GAIN,112,52,39,16,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Gain:",IDC_STA_GAIN,19,69,18,8
+    GROUPBOX        "",IDC_GROUP_CAMCTRL,9,0,205,173
+    LTEXT           "",IDC_STA_TEMP,154,37,32,10
+    PUSHBUTTON      "Once AE",IDC_BTN_ONCEAE,20,105,48,18
+    COMBOBOX        IDC_COMBO_SLAADD,42,158,16,52,CBS_DROPDOWN | CBS_SORT | NOT WS_VISIBLE | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDT_REGADD,66,158,14,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDT_VALUE,114,159,13,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    PUSHBUTTON      "Write",IDC_BTN_W,160,161,30,11,NOT WS_VISIBLE | WS_DISABLED
+    PUSHBUTTON      "Read",IDC_BTN_R,160,161,30,11,NOT WS_VISIBLE | WS_DISABLED
+    LTEXT           "Slave",IDC_STA_SA,28,161,18,8,NOT WS_VISIBLE
+    LTEXT           "Reg",IDC_STA_REG,74,161,14,8,NOT WS_VISIBLE
+    LTEXT           "Value",IDC_STA_VALUE,121,162,18,8,NOT WS_VISIBLE
+    GROUPBOX        "Command",IDC_GRP_COM,15,158,180,13,NOT WS_VISIBLE | WS_DISABLED
+    CONTROL         "CMS",IDC_RADIO_CMS,"Button",BS_AUTORADIOBUTTON,164,68,30,10
+    COMBOBOX        IDC_COM__BITOFDEPTH,153,13,48,65,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "0",IDC_STA_MEAN,33,162,69,8,NOT WS_VISIBLE | WS_DISABLED
+    LTEXT           "0",IDC_STA_STD,123,162,69,8,NOT WS_VISIBLE | WS_DISABLED
+    PUSHBUTTON      "Led On",IDC_BTN_USBLED,154,52,37,14
+END
+
+IDD_DLG_CLRCONTROL DIALOGEX 0, 0, 218, 221
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           " Color Control",IDC_STA_COLOR,0,0,218,12
+    LTEXT           "Red",IDC_STA_RGAIN,27,51,17,10
+    LTEXT           "Green",IDC_STA_GGAIN,19,71,25,10
+    LTEXT           "Blue",IDC_STA_BGAIN,26,90,17,10
+    CONTROL         "",IDC_SLD_RGAIN,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,50,47,117,20
+    CONTROL         "",IDC_SLD_BGAIN,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,50,87,117,20
+    CONTROL         "",IDC_SLD_GGAIN,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,50,67,117,20
+    EDITTEXT        IDC_EDT_RGAIN,166,46,39,16,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDT_GGAIN,166,66,39,16,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDT_BGAIN,166,85,39,16,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "White Balance",IDC_BTN_WB,14,21,64,18
+    LTEXT           "Saturation",IDC_STA_SATURATION,3,110,41,10
+    CONTROL         "",IDC_SLD_SATURATION,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,50,106,117,20
+    EDITTEXT        IDC_EDT_SATURATION,166,105,39,16,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Gamma",IDC_STA_GAMMA,12,130,31,10
+    CONTROL         "",IDC_SLD_GAMMA,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,50,126,117,20
+    EDITTEXT        IDC_EDT_GAMMA,167,124,39,16,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Auto WhiteBalance",IDC_CHK_ATWB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,120,24,91,13
+    LTEXT           "Contrast",IDC_STA_CONTRAST,9,150,34,10
+    CONTROL         "",IDC_SLD_CONTRAST,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,50,145,117,20
+    EDITTEXT        IDC_EDT_CONTRAST,166,146,39,16,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Clr Temp",IDC_STA_CMS,7,191,36,10
+    CONTROL         "",IDC_SLD_CMS,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,50,190,117,20
+    EDITTEXT        IDC_EDT_CMS,167,190,39,16,ES_AUTOHSCROLL | ES_READONLY
+END
+
+IDD_DLG_IMACAPTURE DIALOGEX 0, 0, 221, 151
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Path:",IDC_STATIC,19,47,20,10
+    RTEXT           "Image Name:",IDC_STA_PICNAME,19,66,43,10
+    PUSHBUTTON      "Capture",IDC_BTN_CAPTURE,18,21,62,18
+    EDITTEXT        IDC_EDT_PATH,41,45,124,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTN_BROWSE,170,45,19,13
+    EDITTEXT        IDC_EDT_PICNAME,66,64,38,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_PICNUM,66,83,38,15,ES_AUTOHSCROLL
+    CONTROL         "TIF",IDC_CHK_TIF,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,171,63,21,13
+    CONTROL         "RAW",IDC_CHK_RAW,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,127,63,27,13
+    LTEXT           "",IDC_STA_CAPTURE,88,25,111,10
+    PUSHBUTTON      "Record",IDC_BTN_REC,17,117,48,18
+    PUSHBUTTON      "Setup",IDC_BTN_CODEC,69,117,48,18
+    LTEXT           "",IDC_STA_RECTM,135,121,62,10
+    RTEXT           "Total Frames:",IDC_STA_TOTAL,14,86,48,10
+    CONTROL         "",IDC_SPN_PICNUM,"msctls_updown32",UDS_ARROWKEYS,104,83,9,14
+    GROUPBOX        "Record",IDC_STA_REC,9,103,205,40
+    GROUPBOX        "Image",IDC_GROUP_Image,9,3,205,98
+END
+
+IDD_DLG_INF DIALOGEX 0, 0, 217, 66
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Camera",IDC_STATIC,16,5,70,10
+    LTEXT           "SN",IDC_STA_SNNAME,16,17,70,10
+    LTEXT           "Firmware Serial No.",IDC_STA_FWNAME,16,29,70,10
+    LTEXT           "USB",IDC_STA_USBNAME,16,41,70,10
+    LTEXT           "SDK Serial No.",IDC_STATIC,16,53,70,10
+    LTEXT           "",IDC_STA_CAMERA,115,5,73,10
+    LTEXT           "",IDC_STA_SN,115,17,72,10
+    LTEXT           "",IDC_STA_FW,115,29,73,10
+    LTEXT           "",IDC_STA_USB,115,41,73,10
+    LTEXT           "",IDC_STA_SDKS,115,53,73,10
+    GROUPBOX        "",IDC_GROUP_INFO,8,0,206,64
+END
+
+IDD_DLG_MOREPARA DIALOGEX 0, 0, 220, 412
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    RTEXT           "LevelL",IDC_STA_LLEVEL,11,50,34,10
+    RTEXT           "LevelR",IDC_STA_RLEVEL,11,70,34,10
+    LTEXT           "Cooling",IDC_STA_COOL,11,369,31,10,NOT WS_VISIBLE
+    LTEXT           "Current Temperature :",IDC_STA_CURTMP,11,390,87,10,NOT WS_VISIBLE
+    CONTROL         "",IDC_SLD_LLEVEL,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,49,48,108,14
+    CONTROL         "",IDC_SLD_COOL,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | NOT WS_VISIBLE | WS_TABSTOP,42,366,117,14
+    CONTROL         "",IDC_SLD_RLEVEL,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,49,66,108,14
+    EDITTEXT        IDC_EDT_COOL,158,368,39,16,ES_AUTOHSCROLL | ES_READONLY | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDT_RLEVEL,157,66,39,16,ES_AUTOHSCROLL | ES_READONLY
+    COMBOBOX        IDC_COM_CURTEMP,149,387,47,88,CBS_DROPDOWNLIST | CBS_SORT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDT_LLEVEL,157,48,39,16,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "Default",IDC_BTN_DEFAULT,7,7,48,17
+    CTEXT           "",IDC_STA_TEMP,106,388,39,10,NOT WS_VISIBLE
+    CONTROL         "",IDC_CHK_ATL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,199,49,13,13
+    CONTROL         "",IDC_CHK_ATR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,199,69,13,13
+    GROUPBOX        "Basic",IDC_GROUP_BASIC,8,29,207,151
+    LTEXT           "Auto",IDC_STA_AUTO,196,36,16,8
+    RTEXT           "Gamma",IDC_STA_GAMMA,11,89,34,8
+    RTEXT           "Contrast",IDC_STA_CONTRAST,11,107,34,8
+    RTEXT           "Sharpness",IDC_STA_SHARP,11,123,34,8
+    CONTROL         "",IDC_SLD_GAMM,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,49,84,108,14
+    CONTROL         "",IDC_SLD_CONTRAST,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,49,102,108,14
+    CONTROL         "",IDC_SLD_SHARP,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,49,120,108,14
+    EDITTEXT        IDC_EDT_CONTRAST,157,102,39,16,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDT_GAMMA,157,84,39,16,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDT_SHARP,157,120,39,16,ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "Defect Pixel Correction",IDC_GROUP_DPC,15,146,191,28
+    CONTROL         "Off",IDC_CHK_DPC_OFF,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,159,27,10
+    CONTROL         "Low",IDC_CHK_DPC_LOW,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,65,159,29,10
+    CONTROL         "Medium",IDC_CHK_DPC_MED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,108,159,40,10
+    CONTROL         "High",IDC_CHK_DPC_HIGH,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,162,159,30,10
+    GROUPBOX        "Color Control",IDC_GROUP_CLRCTRL,7,192,208,135
+    RTEXT           "Red",IDC_STA_RCHN,10,236,34,8
+    RTEXT           "Green",IDC_STA_GCHN,10,254,34,8
+    RTEXT           "Blue",IDC_STA_BCHN,10,270,34,8
+    CONTROL         "",IDC_SLD_RCHN,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,48,231,108,14
+    CONTROL         "",IDC_SLD_GCHN,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,48,249,108,14
+    CONTROL         "",IDC_SLD_BCHN,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,48,267,108,14
+    EDITTEXT        IDC_EDT_GCHN,156,249,39,16,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDT_RCHN,156,231,39,16,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDT_BCHN,156,267,39,16,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "Saturation",IDC_STA_SAT,10,307,34,8
+    CONTROL         "",IDC_SLD_SAT,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,48,304,108,14
+    EDITTEXT        IDC_EDT_SAT,156,304,39,16,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Color Temp",IDC_STA_CLRTEMP,10,289,40,8
+    CONTROL         "",IDC_SLD_CLRTEMP,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,48,286,108,14
+    EDITTEXT        IDC_EDT_CLRTEMP,156,286,39,16,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "White Balance",IDC_BTN_WB,55,208,50,14
+    CONTROL         "Auto White Balance",IDC_CHK_AB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,54,210,79,10
+    PUSHBUTTON      "Balck Balance",IDC_BTN_BB,145,208,50,14
+END
+
+IDD_DLG_OTHER DIALOGEX 0, 0, 218, 82
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           " Other",IDC_STA_OTHER,0,0,229,12
+    LTEXT           " SN",IDC_STA_WRSN,11,54,15,10
+    EDITTEXT        IDC_EDT_WRSN,31,51,129,16,ES_AUTOHSCROLL
+    PUSHBUTTON      "Write",IDC_BTN_WRSN,161,48,45,18
+    PUSHBUTTON      "DPC",IDC_BTN_DFC,161,22,45,18
+    PUSHBUTTON      "Calc FFC",IDC_BTN_FFC,31,22,45,18
+    CONTROL         "",IDC_CHK_FFC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,82,25,13,13
+END
+
+IDD_DLG_ROI DIALOGEX 0, 0, 221, 84
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "ROI",IDC_CHK_ROI,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,13,34,13
+    LTEXT           "Start X",IDC_STA_HOFF,15,35,24,10
+    EDITTEXT        IDC_EDT_HOFFSET,48,33,47,16,ES_AUTOHSCROLL
+    LTEXT           "Width",IDC_STA_WIDTH,15,57,23,10
+    LTEXT           "Start Y",IDC_STA_VOFF,114,36,26,10
+    LTEXT           "Height",IDC_STA_HEIGHT,114,57,27,10
+    EDITTEXT        IDC_EDT_WIDTH,48,54,47,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_VOFFSET,147,33,47,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_HEIGHT,147,54,47,16,ES_AUTOHSCROLL
+    PUSHBUTTON      "Set ROI",IDC_BTN_ROI,146,11,48,17
+    GROUPBOX        "",IDC_GROUP_ROI,9,1,205,79
+END
+
+IDD_DLG_TRIGER DIALOGEX 0, 0, 228, 195
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Hardware",IDC_STATIC,19,12,83,81
+    GROUPBOX        "Exposure",IDC_STATIC,111,12,97,33
+    CONTROL         "Off",IDC_RADIO_OFF,"Button",BS_AUTORADIOBUTTON | WS_GROUP,25,26,31,13
+    CONTROL         "Standard",IDC_RADIO_STANDARD,"Button",BS_AUTORADIOBUTTON,25,42,54,13
+    CONTROL         "Synchronization",IDC_RADIO_SYNCHRO,"Button",BS_AUTORADIOBUTTON,25,58,73,13
+    CONTROL         "Global",IDC_RADIO_GLOABAL,"Button",BS_AUTORADIOBUTTON,25,74,45,13
+    CONTROL         "Width",IDC_RADIO_WIDTH,"Button",BS_AUTORADIOBUTTON | WS_GROUP,163,27,37,13
+    CONTROL         "Timed",IDC_RADIO_TIMED,"Button",BS_AUTORADIOBUTTON,115,27,37,13
+    GROUPBOX        "Edge",IDC_STATIC,111,59,97,34
+    CONTROL         "Rising",IDC_RADIO_RISING,"Button",BS_AUTORADIOBUTTON | WS_GROUP,115,74,37,13
+    CONTROL         "Falling",IDC_RADIO_FALLING,"Button",BS_AUTORADIOBUTTON,163,74,37,13
+    GROUPBOX        "Software",IDC_STATIC,17,130,86,54
+    CONTROL         "Software Trigger",IDC_CHK_STTRIGGER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,26,143,66,13
+    PUSHBUTTON      "Snap",IDC_BTN_SNAP,25,160,43,18
+    PUSHBUTTON      "OK",IDC_BTN_UPDATE,177,112,27,14
+    PUSHBUTTON      "Apply",IDC_BTN_APPLY,160,143,46,33
+    LTEXT           "Ms",IDC_STA_MS,101,99,12,10
+    LTEXT           "μs",IDC_STA_US,141,99,9,10
+    LTEXT           "Sec",IDC_STA_SEC,59,99,14,10
+    EDITTEXT        IDC_EDT_SEC,48,112,30,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_MS,89,112,30,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_US,131,112,30,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPN_US,"msctls_updown32",UDS_ARROWKEYS,161,111,9,15
+    CONTROL         "",IDC_SPN_MS,"msctls_updown32",UDS_ARROWKEYS,119,111,10,15
+    CONTROL         "",IDC_SPN_SEC,"msctls_updown32",UDS_ARROWKEYS,78,111,9,15
+    LTEXT           "Delay:",IDC_STA_DELAY,22,113,22,8
+    GROUPBOX        "",IDC_GROUP_TRIGGER,9,2,208,189
+END
+
+IDD_DLGRAM DIALOGEX 0, 0, 206, 104
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "RAM Ceiling"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,37,81,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,121,80,50,14
+    LTEXT           "Total Physical：[Mem=8.00GB] (4.00GB Available)",IDC_STATIC_RAMINFO,23,17,178,11
+    CONTROL         "Actual",IDC_RADIO_ACTUAL,"Button",BS_AUTORADIOBUTTON,37,38,36,10
+    CONTROL         "Percent",IDC_RADIO_PERCENT,"Button",BS_AUTORADIOBUTTON,38,59,41,10
+    EDITTEXT        IDC_EDT_ACTUAL,81,36,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_PERCENT,83,56,28,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPN_PERCENT,"msctls_updown32",UDS_ARROWKEYS,111,56,11,14
+    LTEXT           "GB",IDC_STATIC,131,39,10,8
+    LTEXT           "% of Available",IDC_STATIC,131,58,49,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,22
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "Xintu Photonics Co.,Ltd."
+            VALUE "FileDescription", "Tucsen camera applction"
+            VALUE "FileVersion", "1, 0, 0, 22"
+            VALUE "InternalName", "SamplePro.exe"
+            VALUE "LegalCopyright", "Copyright (C) Xintu Photonics Co.,Ltd. 2011-2016"
+            VALUE "OriginalFilename", "SamplePro.exe"
+            VALUE "ProductName", "Tucsen camera demo"
+            VALUE "ProductVersion", "1, 0, 0, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_SAMPLEPRO_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 641
+        VERTGUIDE, 200
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 470
+    END
+
+    IDD_DLG_CTL, DIALOG
+    BEGIN
+        RIGHTMARGIN, 194
+        BOTTOMMARGIN, 94
+    END
+
+    IDD_DLG_PICVIEW, DIALOG
+    BEGIN
+        RIGHTMARGIN, 593
+    END
+
+    IDD_DLG_CAMCONTROL, DIALOG
+    BEGIN
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 173
+        HORZGUIDE, 1
+    END
+
+    IDD_DLG_CLRCONTROL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 201
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 214
+        HORZGUIDE, 1
+    END
+
+    IDD_DLG_IMACAPTURE, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 146
+        HORZGUIDE, 1
+    END
+
+    IDD_DLG_INF, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        RIGHTMARGIN, 212
+        HORZGUIDE, 1
+    END
+
+    IDD_DLG_MOREPARA, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 405
+        HORZGUIDE, 1
+    END
+
+    IDD_DLG_OTHER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 201
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+        HORZGUIDE, 1
+    END
+
+    IDD_DLG_ROI, DIALOG
+    BEGIN
+        RIGHTMARGIN, 218
+        HORZGUIDE, 1
+    END
+
+    IDD_DLG_TRIGER, DIALOG
+    BEGIN
+        RIGHTMARGIN, 226
+        TOPMARGIN, 2
+        HORZGUIDE, 1
+    END
+
+    IDD_DLGRAM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 199
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 97
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR1             CURSOR                  "res\\arrow_m.cur"
+IDC_CURSOR2             CURSOR                  "res\\move_r.cur"
+IDC_CURSOR3             CURSOR                  "res\\size1_r.cur"
+IDC_CURSOR4             CURSOR                  "res\\size2_r.cur"
+IDC_CURSOR5             CURSOR                  "res\\size3_r.cur"
+IDC_CURSOR6             CURSOR                  "res\\size4_r.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 SamplePro(&A)..."
+    IDS_SELECT_TITTLE       "Select a directory"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DLG_INF             "Information"
+    IDS_DLG_CAMCON          "Camera Control"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DLG_IMACAP          "Image Capture"
+    IDS_DLG_CLRC            "Color Control"
+    IDS_DLG_MOREPAR         "More Parameters"
+    IDS_DLG_ROI             "ROI"
+    IDS_DLG_TRIG            "Trigger"
+    IDS_DLG_OTHER           "Other"
+END
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\SamplePro.rc2"  // 非 Microsoft Visual C++ 编辑的资源
+#include "l.CHS\afxres.rc"      // 标准组件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

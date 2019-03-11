@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="RoiSet">
+      <UniqueIdentifier>{ae01a237-de36-4158-b4c5-8100526e4de3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CameraControl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraControlMode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorControl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CompressDialog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageCapture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Information.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MoreParameters.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Others.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PicViewMode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Raminfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ROI.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SamplePro.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SampleProDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Trigger.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TUButton.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RoiSet\DlgRoiSet.cpp">
+      <Filter>RoiSet</Filter>
+    </ClCompile>
+    <ClCompile Include="RoiSet\MyTracker.cpp">
+      <Filter>RoiSet</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CameraControl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraControlMode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorControl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CompressDialog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageCapture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Information.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MoreParameters.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Others.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PicViewMode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Raminfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ROI.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SamplePro.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SampleProDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Trigger.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TUButton.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RoiSet\DlgRoiSet.h">
+      <Filter>RoiSet</Filter>
+    </ClInclude>
+    <ClInclude Include="RoiSet\MyTracker.h">
+      <Filter>RoiSet</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\arrow_m.cur">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\cursor1.cur">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\cursor2.cur">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\cursor5.cur">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\move_r.cur">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\SamplePro.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\size1_r.cur">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\size2_r.cur">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\size3_r.cur">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\size4_r.cur">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\SamplePro.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SamplePro.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

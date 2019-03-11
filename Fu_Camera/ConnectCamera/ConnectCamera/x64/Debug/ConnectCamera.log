@@ -1,0 +1,4 @@
+﻿  ConnectCamera.cpp
+c:\users\agarwal\desktop\dhyanacamera\fu\connectcamera\connectcamera\connectcamera.cpp(91): warning C4474: 'printf' : too many arguments passed for format string
+  c:\users\agarwal\desktop\dhyanacamera\fu\connectcamera\connectcamera\connectcamera.cpp(91): note: placeholders and their parameters expect 4 variadic arguments, but 5 were provided
+  ConnectCamera.vcxproj -> C:\Users\Agarwal\Desktop\DhyanaCamera\Fu\ConnectCamera\x64\Debug\ConnectCamera.exe

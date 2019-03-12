@@ -8,6 +8,8 @@
 #include <iostream>
 #include <stdio.h>
 
+using namespace std; //now you don't have to write 'std::' anymore.
+
 /*void GetResolitionRange()
 {
 	TUCAM_CAPA_ATTR attrCapa;
@@ -49,7 +51,7 @@ void GetCurrentResolution()
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	std::cout << "Hello World!\n";
 
 	TUCAM_INIT itApi; // 初始化SDK环境参数
 	TUCAM_OPEN opCam; // 打开相机参数
@@ -83,30 +85,91 @@ int main()
 	//TUCAM_Capa_SetValue(opCam.hIdxTUCam, TUIDC_RESOLUTION, nIdxRes);
 
 	INT32 nVal = 0;
-	INT32 pnVal[4] = {16, 32, 64, 128};
+	INT32 pnVal[4] = { 16, 32, 64, 128 };
 
 
 	if (TUCAMRET_SUCCESS == TUCAM_Capa_GetValue(opCam.hIdxTUCam, TUIDC_RESOLUTION, pnVal))
 	{
-		printf("TUIDC_RESOLUTION is %d, %d, %d, %d \n", pnVal[0], pnVal[1], pnVal[2], pnVal[3], pnVal[4]);
+		printf("TUIDC_RESOLUTION is %d, %d, %d, %d \n", pnVal[0], pnVal[1], pnVal[2], pnVal[3]);
 
 	}
 
 	TUCAM_Prop_SetValue(opCam.hIdxTUCam, TUIDP_TEMPERATURE, -10.0);
 
-	double dbVal = 10.0f;
+	double dbVal = 100.0f;
 
 	TUCAM_Prop_SetValue(opCam.hIdxTUCam, TUIDP_EXPOSURETM, dbVal);
 
 	if (TUCAMRET_SUCCESS == TUCAM_Prop_GetValue(opCam.hIdxTUCam, TUIDP_EXPOSURETM, &dbVal))
 	{
-		
+
 		// dbVal返回当前曝光时间，单位ms
 		printf("TUIDP_EXPOSURETM is %f \n", dbVal);
 
 	}
 
+	// 获取相机通道数
+	TUCAM_VALUE_INFO valInfo;
+	valInfo.nValue = 1;
+	valInfo.nID = TUIDI_CAMERA_CHANNELS;
+	TUCAM_Dev_GetInfo(opCam.hIdxTUCam, &valInfo);
 
+	TUCAM_FRAME m_frame;  // 帧对象
+	HANDLE m_hThdGrab; // 取图线程事件句柄
+	BOOL m_bLiving; // 是否取图
+
+	m_frame.pBuffer = NULL;
+	m_frame.ucFormatGet = TUFRM_FMT_USUAl; // 一般的数据（8bit/16bit、黑白、彩色）
+	m_frame.uiRsdSize = 1; // 一次捕获帧数（TUCCM_TRIGGER_STANDARD可大于1）
+
+	if(TUCAMRET_SUCCESS != TUCAM_Buf_Alloc(opCam.hIdxTUCam,  &m_frame))
+	{
+		printf("TUCAM_Buf_Alloc fail !\n");
+	}
+
+	if (TUCAMRET_SUCCESS != TUCAM_Cap_Start(opCam.hIdxTUCam, TUCCM_SEQUENCE))
+	{
+		printf("TUCAM_Cap_Start fail !\n");
+	}
+
+	printf("m_frame.usWidth is %d, m_frame.usHeight is %d \n", m_frame.usWidth, m_frame.usHeight);
+
+
+	// print out the image data 
+
+	int N = 10;
+
+	for(int i = 0; i <N; i++)
+	{
+		//printf("m_frame.pBuffer[%d] is %d", i, m_frame.pBuffer[i]);
+		cout << i << static_cast<unsigned>(m_frame.pBuffer[i]) << std::endl;
+
+	}
+
+	// save image.....
+	m_frame.ucFormatGet = TUFRM_FMT_USUAl; // 一般的数据（8bit/16bit、黑白、彩色）
+	if (TUCAMRET_SUCCESS == TUCAM_Buf_WaitForFrame(opCam.hIdxTUCam, &m_frame))
+	{
+		TUCAM_FILE_SAVE fileSave;
+		fileSave.nSaveFmt = TUFMT_TIF; // 保存Tiff格式
+		fileSave.pFrame = &m_frame; // 需要保存的帧指针
+		//char * s = "Joe";
+		char pss[] = "C:\\Users\\Agarwal\\Desktop\\image1"; 
+				// using "\\" not '\'
+				// fileSave.pstrSavePath = "C:\\Users\\Agarwal\\Desktop\\image1"; will not work! 
+				//Because that "C:\\Users\\Agarwal\\Desktop\\image1" is a constant char array, which cannot pass to a char pointer
+		fileSave.pstrSavePath = pss; // 路径包含文件名（不包含扩展名
+		if (TUCAMRET_SUCCESS == TUCAM_File_SaveImage(opCam.hIdxTUCam, fileSave))
+		{
+			printf("TUCAM_File_SaveImage Success");
+		}
+
+	}
+
+
+
+	TUCAM_Cap_Stop(opCam.hIdxTUCam);                  // Stop capture   
+	TUCAM_Buf_Release(opCam.hIdxTUCam);               // Release alloc buffer after stop capture and quit drawing thread
 
 	TUCAM_Dev_Close(opCam.hIdxTUCam); // 关闭相机
 	TUCAM_Api_Uninit(); // 反初始化SDK API环境

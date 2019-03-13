@@ -1,0 +1,16 @@
+﻿  stdafx.cpp
+  CameraDLL_Fu.cpp
+c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_fu\cameradll_fu\cameradll_fu.cpp(26): warning C4273: 'OpenCamera': inconsistent dll linkage
+  c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_fu\cameradll_fu\cameradll_fu.h(23): note: see previous definition of 'OpenCamera'
+c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_fu\cameradll_fu\cameradll_fu.cpp(65): warning C4273: 'fibonacci_init': inconsistent dll linkage
+  c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_fu\cameradll_fu\cameradll_fu.h(25): note: see previous definition of 'fibonacci_init'
+c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_fu\cameradll_fu\cameradll_fu.cpp(74): warning C4273: 'fibonacci_next': inconsistent dll linkage
+  c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_fu\cameradll_fu\cameradll_fu.h(32): note: see previous definition of 'fibonacci_next'
+c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_fu\cameradll_fu\cameradll_fu.cpp(95): warning C4273: 'fibonacci_current': inconsistent dll linkage
+  c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_fu\cameradll_fu\cameradll_fu.h(35): note: see previous definition of 'fibonacci_current'
+c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_fu\cameradll_fu\cameradll_fu.cpp(101): warning C4273: 'fibonacci_index': inconsistent dll linkage
+  c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_fu\cameradll_fu\cameradll_fu.h(38): note: see previous definition of 'fibonacci_index'
+  dllmain.cpp
+  Generating Code...
+     Creating library C:\Users\Agarwal\Desktop\CameraGithub\Fu_Camera\CameraDLL_Fu\x64\Debug\CameraDLL_Fu.lib and object C:\Users\Agarwal\Desktop\CameraGithub\Fu_Camera\CameraDLL_Fu\x64\Debug\CameraDLL_Fu.exp
+  CameraDLL_Fu.vcxproj -> C:\Users\Agarwal\Desktop\CameraGithub\Fu_Camera\CameraDLL_Fu\x64\Debug\CameraDLL_Fu.dll

@@ -2,7 +2,6 @@
 //
 
 #include "pch.h"
-#include <iostream>
 #include "../../sdk/inc/TUCamApi.h"                         // µ¼ÈëSDKÍ·ÎÄ¼þ
 
 #include <iostream>

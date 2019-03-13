@@ -136,6 +136,8 @@ int main()
 	valInfo.nID = TUIDI_CAMERA_CHANNELS;
 	TUCAM_Dev_GetInfo(opCam.hIdxTUCam, &valInfo);
 
+
+
 	TUCAM_FRAME m_frame;  // 帧对象
 	HANDLE m_hThdGrab; // 取图线程事件句柄
 	BOOL m_bLiving; // 是否取图

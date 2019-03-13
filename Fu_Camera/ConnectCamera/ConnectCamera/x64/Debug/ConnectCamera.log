@@ -1,4 +1,4 @@
 ﻿  ConnectCamera.cpp
-c:\users\agarwal\desktop\dhyanacamera\fu_camera\connectcamera\connectcamera\connectcamera.cpp(118): warning C4101: 'm_hThdGrab': unreferenced local variable
-c:\users\agarwal\desktop\dhyanacamera\fu_camera\connectcamera\connectcamera\connectcamera.cpp(119): warning C4101: 'm_bLiving': unreferenced local variable
-  ConnectCamera.vcxproj -> C:\Users\Agarwal\Desktop\DhyanaCamera\Fu_Camera\ConnectCamera\x64\Debug\ConnectCamera.exe
+c:\users\agarwal\desktop\cameragithub\fu_camera\connectcamera\connectcamera\connectcamera.cpp(140): warning C4101: 'm_hThdGrab': unreferenced local variable
+c:\users\agarwal\desktop\cameragithub\fu_camera\connectcamera\connectcamera\connectcamera.cpp(141): warning C4101: 'm_bLiving': unreferenced local variable
+  ConnectCamera.vcxproj -> C:\Users\Agarwal\Desktop\CameraGithub\Fu_Camera\ConnectCamera\x64\Debug\ConnectCamera.exe

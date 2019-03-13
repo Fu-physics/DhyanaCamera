@@ -49,6 +49,7 @@ void GetCurrentResolution()
 
 */
 
+
 int main()
 {
 	std::cout << "Hello World!\n";
@@ -84,22 +85,43 @@ int main()
 	// 设置当前分辨率
 	//TUCAM_Capa_SetValue(opCam.hIdxTUCam, TUIDC_RESOLUTION, nIdxRes);
 
-	INT32 nVal = 0;
-	INT32 pnVal[4] = { 16, 32, 64, 128 };
+	//INT32 pnVal[4] = { 16, 32, 64, 128 };
 
 
+	/*
 	if (TUCAMRET_SUCCESS == TUCAM_Capa_GetValue(opCam.hIdxTUCam, TUIDC_RESOLUTION, pnVal))
 	{
 		printf("TUIDC_RESOLUTION is %d, %d, %d, %d \n", pnVal[0], pnVal[1], pnVal[2], pnVal[3]);
+	}
+	*/
 
+	// set temperature
+	double dbTempSet = -10.0;
+	/*
+	if (TUCAMRET_SUCCESS == TUCAM_Prop_SetValue(opCam.hIdxTUCam, TUIDP_TEMPERATURE, dbTempSet))
+	{
+		printf("TUIDP_TEMPERATURE is set down ! \n");
+	}
+	*/
+
+	//get temperature
+	double dbtemp = 10.0;
+	TUCAM_Prop_GetValue(opCam.hIdxTUCam, TUIDP_TEMPERATURE, &dbtemp);
+	printf("TUIDP_TEMPERATURE is %f \n", dbtemp);
+
+	while (dbtemp  > dbTempSet)
+	{
+		Sleep(5000);
+		TUCAM_Prop_GetValue(opCam.hIdxTUCam, TUIDP_TEMPERATURE, &dbtemp);
+		printf("TUIDP_TEMPERATURE is %f \n", dbtemp);
+		//TUCAM_Prop_SetValue(opCam.hIdxTUCam, TUIDP_TEMPERATURE, dbTempSet);
 	}
 
-	TUCAM_Prop_SetValue(opCam.hIdxTUCam, TUIDP_TEMPERATURE, -10.0);
-
+	// set exposure time
 	double dbVal = 100.0f;
-
 	TUCAM_Prop_SetValue(opCam.hIdxTUCam, TUIDP_EXPOSURETM, dbVal);
 
+	// get exposure time
 	if (TUCAMRET_SUCCESS == TUCAM_Prop_GetValue(opCam.hIdxTUCam, TUIDP_EXPOSURETM, &dbVal))
 	{
 
@@ -165,7 +187,6 @@ int main()
 		}
 
 	}
-
 
 
 	TUCAM_Cap_Stop(opCam.hIdxTUCam);                  // Stop capture   

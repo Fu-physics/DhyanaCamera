@@ -14,7 +14,7 @@
         <Sharpness>0</Sharpness>
         <DenoiseValue>0</DenoiseValue>
         <DenoisePermission>0</DenoisePermission>
-        <Temperature>100</Temperature>
+        <Temperature>0</Temperature>
         <FanMode>2</FanMode>
         <BlackLevelHighGain>0</BlackLevelHighGain>
         <BlackLevelLowGain>0</BlackLevelLowGain>

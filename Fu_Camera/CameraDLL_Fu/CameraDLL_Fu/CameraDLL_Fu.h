@@ -8,6 +8,19 @@
 #define MATHLIBRARY_API __declspec(dllimport)
 #endif
 
+
+extern "C" MATHLIBRARY_API void OpenCamera();
+
+extern "C" MATHLIBRARY_API void CloseCamera();
+
+extern "C" MATHLIBRARY_API void SetTemp(double dbTempSet);
+
+extern "C" MATHLIBRARY_API void SetExposureTime(double dbExpTime);
+
+extern "C" MATHLIBRARY_API void SetROIMod();
+
+extern "C" MATHLIBRARY_API void CaptureSingleFrame(int FrameIndex);
+
 // The Fibonacci recurrence relation describes a sequence F
 // where F(n) is { n = 0, a
 //               { n = 1, b
@@ -20,7 +33,7 @@
 // Initialize a Fibonacci relation sequence
 // such that F(0) = a, F(1) = b.
 // This function must be called before any other function.
-extern "C" MATHLIBRARY_API void OpenCamera();
+
 
 extern "C" MATHLIBRARY_API void fibonacci_init(
 	const unsigned long long a, const unsigned long long b);
@@ -36,3 +49,6 @@ extern "C" MATHLIBRARY_API unsigned long long fibonacci_current();
 
 // Get the position of the current value in the sequence.
 extern "C" MATHLIBRARY_API unsigned fibonacci_index();
+
+
+extern "C" MATHLIBRARY_API  int sum(int a, int b);

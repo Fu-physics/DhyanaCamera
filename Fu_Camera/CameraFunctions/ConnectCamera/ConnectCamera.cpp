@@ -34,6 +34,10 @@ TUCAM_FILE_SAVE fileSave; // save file
 
 TUCAM_ROI_ATTR roiAttr; // set frame size
 
+//char cSN[TUSN_SIZE] = { 0 };
+
+
+
 
 
 void OpenCamera()
@@ -91,7 +95,6 @@ void SetTemp(double dbTempSet)
 	}
 	*/
 
-
 	//get temperature
 	double dbtemp = 10.0;
 	TUCAM_Prop_GetValue(opCam.hIdxTUCam, TUIDP_TEMPERATURE, &dbtemp);
@@ -104,8 +107,6 @@ void SetTemp(double dbTempSet)
 		printf("TUIDP_TEMPERATURE is %f \n", dbtemp);
 		//TUCAM_Prop_SetValue(opCam.hIdxTUCam, TUIDP_TEMPERATURE, dbTempSet);
 	}
-
-
 }
 
 void SetExposureTime(double dbExpTime)
@@ -129,16 +130,15 @@ void SetExposureTime(double dbExpTime)
 void SetROIMod()
 {
 	roiAttr.bEnable = 1;
-	roiAttr.nVOffset = 100;
-	roiAttr.nHOffset = 100;
-	roiAttr.nWidth = 800;
-	roiAttr.nHeight = 600;
+	roiAttr.nVOffset = 0;
+	roiAttr.nHOffset = 0;
+	roiAttr.nWidth = 1024;
+	roiAttr.nHeight = 256;
 
 	if (TUCAMRET_SUCCESS != TUCAM_Cap_SetROI(opCam.hIdxTUCam, roiAttr))
 	{
 		printf("TUCAM_Cap_SetROI fail !\n");
 	}
-
 
 }
 
@@ -186,15 +186,38 @@ void CaptureSingleFrame(int FrameIndex=1)
 		}
 	}
 
-	/*
 
-	unsigned char * p;
-	p = m_frame.pBuffer;
-	int i = (int)(p);
+	// read the image data directly from the memory block
+	TUCAM_IMG_HEADER frmhead;
 
-	printf("the first number is %d\n", i);
-	
-	*/
+	memcpy(&frmhead, m_frame.pBuffer, sizeof(TUCAM_IMG_HEADER));
+
+
+	// "%hu" is the unsing short
+	printf("the image (width, hight) is: (%hu, %hu) \n", frmhead.usWidth, frmhead.usHeight);
+	//std::cout << "sizeof(frmhead.pImgData) is : " << (sizeof(frmhead.pImgData[0])) << "\n";
+
+	std::cout << "frmhead.pImgData is : ";
+
+	// cast to a unsigned short int, which is 16 bites
+	unsigned short int *intvalu;
+	intvalu = (unsigned short int*)(&frmhead);
+
+
+	std::cout << "frmhead.pImgData is : ";
+	for(int i = 0; i < 10; i++) 
+	{
+		std::cout << (int)(frmhead.pImgData[i]) << "\t";
+	}
+	std::cout << "\n";
+
+	std::cout << "frmhead.pImgData is : ";
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << (int)(intvalu[i]) << "\t";
+	}
+
+	std::cout << "\n";
 
 	// Stop capture
 	TUCAM_Cap_Stop(opCam.hIdxTUCam);                  

@@ -1,0 +1,28 @@
+﻿  CameraDLL_Fu.cpp
+c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.cpp(34): warning C4273: 'OpenCamera': inconsistent dll linkage
+  c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.h(12): note: see previous definition of 'OpenCamera'
+c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.cpp(60): warning C4273: 'CloseCamera': inconsistent dll linkage
+  c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.h(14): note: see previous definition of 'CloseCamera'
+c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.cpp(81): warning C4273: 'SetTemp': inconsistent dll linkage
+  c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.h(16): note: see previous definition of 'SetTemp'
+c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.cpp(109): warning C4273: 'SetExposureTime': inconsistent dll linkage
+  c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.h(18): note: see previous definition of 'SetExposureTime'
+c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.cpp(125): warning C4273: 'SetROIMod': inconsistent dll linkage
+  c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.h(20): note: see previous definition of 'SetROIMod'
+c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.cpp(143): warning C4273: 'CaptureSingleFrame': inconsistent dll linkage
+  c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.h(22): note: see previous definition of 'CaptureSingleFrame'
+c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.cpp(238): warning C4273: 'CaptureStop': inconsistent dll linkage
+  c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.h(24): note: see previous definition of 'CaptureStop'
+c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.cpp(248): warning C4273: 'BufRelease': inconsistent dll linkage
+  c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.h(25): note: see previous definition of 'BufRelease'
+c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.cpp(266): warning C4273: 'fibonacci_init': inconsistent dll linkage
+  c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.h(41): note: see previous definition of 'fibonacci_init'
+c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.cpp(275): warning C4273: 'fibonacci_next': inconsistent dll linkage
+  c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.h(48): note: see previous definition of 'fibonacci_next'
+c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.cpp(296): warning C4273: 'fibonacci_current': inconsistent dll linkage
+  c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.h(51): note: see previous definition of 'fibonacci_current'
+c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.cpp(302): warning C4273: 'fibonacci_index': inconsistent dll linkage
+  c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.h(54): note: see previous definition of 'fibonacci_index'
+c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.cpp(307): warning C4273: 'sum': inconsistent dll linkage
+  c:\users\agarwal\desktop\cameragithub\fu_camera\cameradll_returnpointer\cameradll_fu\cameradll_fu.h(57): note: see previous definition of 'sum'
+  CameraDLL_Fu.vcxproj -> C:\Users\Agarwal\Desktop\CameraGithub\Fu_Camera\CameraDLL_ReturnPointer\x64\Debug\CameraDLL_Fu.dll

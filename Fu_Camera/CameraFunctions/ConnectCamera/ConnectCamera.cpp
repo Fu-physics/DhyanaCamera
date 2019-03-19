@@ -10,19 +10,6 @@
 using namespace std; //now you don't have to write 'std::' anymore.
 
 
-
-/*
-
-void GetCurrentResolution()
-{
-	int nVal = 0;
-	if (TUCAMRET_SUCCESS == TUCAM_Capa_GetValue(opCam.hIdxTUCam, UIDC_RESOLUTION, &nVal))
-	{
-	}
-}
-
-*/
-
 TUCAM_INIT itApi; // 初始化SDK环境参数
 TUCAM_OPEN opCam; // 打开相机参数
 
@@ -70,17 +57,22 @@ void OpenCamera()
 
 void CloseCamera()
 {
-
 	//TUCAM_Cap_Stop(opCam.hIdxTUCam);                  // Stop capture   
 	//TUCAM_Buf_Release(opCam.hIdxTUCam);               // Release alloc buffer after stop capture and quit drawing thread
 
-	TUCAM_Dev_Close(opCam.hIdxTUCam); // 关闭相机
+	if (TUCAMRET_SUCCESS != TUCAM_Dev_Close(opCam.hIdxTUCam)) // 关闭相机
+	{
+		std::cout << "TUCAM_Dev_Close fail ! \n";
+	}
 	std::cout << "Camera Closed ! \n";
 
-	TUCAM_Api_Uninit(); // 反初始化SDK API环境
+
+	if (TUCAMRET_SUCCESS != TUCAM_Api_Uninit()) // 反初始化SDK API环境
+	{
+		std::cout << "TUCAM_Api_Uninit fail ! \n";
+	}
+
 	std::cout << "Uninitialized API ! \n \n \n";
-
-
 }
 
 
@@ -130,9 +122,9 @@ void SetExposureTime(double dbExpTime)
 void SetROIMod()
 {
 	roiAttr.bEnable = 1;
-	roiAttr.nVOffset = 0;
-	roiAttr.nHOffset = 0;
-	roiAttr.nWidth = 1024;
+	roiAttr.nVOffset = 1024;
+	roiAttr.nHOffset = 1024;
+	roiAttr.nWidth = 256;
 	roiAttr.nHeight = 256;
 
 	if (TUCAMRET_SUCCESS != TUCAM_Cap_SetROI(opCam.hIdxTUCam, roiAttr))
@@ -143,11 +135,7 @@ void SetROIMod()
 }
 
 
-
-
-
-
-void CaptureSingleFrame(int FrameIndex=1)
+unsigned short int* CaptureSingleFrame(int FrameIndex=1)
 {
 	m_frame.pBuffer = NULL;
 	m_frame.ucFormatGet = TUFRM_FMT_USUAl; // 一般的数据（8bit/16bit、黑白、彩色）
@@ -163,12 +151,17 @@ void CaptureSingleFrame(int FrameIndex=1)
 		printf("TUCAM_Cap_Start fail !\n");
 	}
 
+	
+
 	if (TUCAMRET_SUCCESS == TUCAM_Buf_WaitForFrame(opCam.hIdxTUCam, &m_frame))
 	{
+		printf("TUCAM_Buf_WaitForFrame is SUCCESS..\n");
+		/*
+
 		fileSave.nSaveFmt = TUFMT_TIF; // 保存Tiff格式
 		fileSave.pFrame = &m_frame; // 需要保存的帧指针
 		//char * s = "Joe";
-		char pss[] = "..\\..\\..\\ImageContainer\\image1";
+		//char pss[] = "..\\..\\..\\ImageContainer\\image1";
 
 		char filename[100];
 
@@ -179,13 +172,17 @@ void CaptureSingleFrame(int FrameIndex=1)
 		// using "\\" not '\'
 		// fileSave.pstrSavePath = "C:\\Users\\Agarwal\\Desktop\\image1"; will not work! 
 		//Because that "C:\\Users\\Agarwal\\Desktop\\image1" is a constant char array, which cannot pass to a char pointer
-		fileSave.pstrSavePath = filename; // 路径包含文件名（不包含扩展名
-		if (TUCAMRET_SUCCESS != TUCAM_File_SaveImage(opCam.hIdxTUCam, fileSave))
-		{
-			printf("TUCAM_File_SaveImage fail ! \n");
-		}
-	}
+		//fileSave.pstrSavePath = filename; // 路径包含文件名（不包含扩展名
+		char pss[] = ".\\image1";
+		fileSave.pstrSavePath = pss;
+		//if (TUCAMRET_SUCCESS != TUCAM_File_SaveImage(opCam.hIdxTUCam, fileSave))
+		//{
+		//	printf("TUCAM_File_SaveImage fail ! \n");
+		//}
 
+		*/
+	}
+	
 
 	// read the image data directly from the memory block
 	TUCAM_IMG_HEADER frmhead;
@@ -197,20 +194,30 @@ void CaptureSingleFrame(int FrameIndex=1)
 	printf("the image (width, hight) is: (%hu, %hu) \n", frmhead.usWidth, frmhead.usHeight);
 	//std::cout << "sizeof(frmhead.pImgData) is : " << (sizeof(frmhead.pImgData[0])) << "\n";
 
-	std::cout << "frmhead.pImgData is : ";
-
 	// cast to a unsigned short int, which is 16 bites
 	unsigned short int *intvalu;
-	intvalu = (unsigned short int*)(&frmhead);
+	intvalu = (unsigned short int*)(frmhead.pImgData); 
+	return intvalu;
 
-
+	// method two
+	/*
 	std::cout << "frmhead.pImgData is : ";
-	for(int i = 0; i < 10; i++) 
+	for(int i = 0; i < 10; i+=2) 
 	{
-		std::cout << (int)(frmhead.pImgData[i]) << "\t";
+
+		int x = (int)(frmhead.pImgData[i]);
+		int y = (int)(frmhead.pImgData[i+1]);
+		//std::cout << x << " " << y;
+		std::cout << "(" << 256*x + y << ") \t";
+		//std::cout << x << " " << y << "(" << x + y * 256 << ") \t";
+
+		//twoBytes = frmhead.pImgData[i-1] << 8 | frmhead.pImgData[i];
+		//cout << twoBytes << "\t";
 	}
 	std::cout << "\n";
+	*/
 
+	/*
 	std::cout << "frmhead.pImgData is : ";
 	for (int i = 0; i < 10; i++)
 	{
@@ -218,14 +225,28 @@ void CaptureSingleFrame(int FrameIndex=1)
 	}
 
 	std::cout << "\n";
-
-	// Stop capture
-	TUCAM_Cap_Stop(opCam.hIdxTUCam);                  
-
-	// Release alloc buffer after stop capture and quit drawing thread
-	TUCAM_Buf_Release(opCam.hIdxTUCam);               
+	*/
 }
 
+
+void CaptureStop() {
+	// Stop capture
+	if (TUCAMRET_SUCCESS != TUCAM_Cap_Stop(opCam.hIdxTUCam))
+	{
+		printf("TUCAM_Cap_Stop fail !\n");
+	}
+
+}
+
+void BufRelease()
+{
+	// Release alloc buffer after stop capture and quit drawing thread
+	if (TUCAMRET_SUCCESS == TUCAM_Buf_Release(opCam.hIdxTUCam))
+	{
+		printf("TUCAM_Buf_Release SUCCESS !\n");
+	}
+
+}
 
 
 
@@ -245,16 +266,31 @@ int main()
 
 	// set the frame size
 	//SetROIMod();
+
+	unsigned short int* imageDta;
 	
 	// Capture multi-frames
 	for (int i=1; i < 10; i++)
 	{
 		SetROIMod(); // for each frame, you have to set the ROI. So it cannot put out of this for loop
 					 //CaptureSingleFrame
-		CaptureSingleFrame(i);
+		imageDta = CaptureSingleFrame(i);
+
+		
+		std::cout << "frmhead.pImgData is : ";
+		for (int i = 0; i < 10; i++)
+		{
+			std::cout << (int)(imageDta[i]) << "\t";
+		}
+
+		std::cout << "\n";
+
+		// Stop capture
+		CaptureStop();
+		// Release alloc buffer after stop capture and quit drawing thread
+		BufRelease();
 	}
 	
-
 	std::cout << "\n \n \n";
 	CloseCamera();
 	std::cout << "The end!\n";
